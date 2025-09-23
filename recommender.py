@@ -8,7 +8,6 @@ class Recommender():
         # Setup logger and rotating file handler
         self.logger = logging.getLogger("logger")
         self.logger.setLevel(logging.DEBUG)
-        os.system("mkdir -p Logs")
         handler = RotatingFileHandler(
         os.path.join("Logs","log.log"), maxBytes=100000, backupCount=5, encoding="utf-8")
         formatter = logging.Formatter(
@@ -19,6 +18,10 @@ class Recommender():
         self.logger.debug("Finished Initialization")
         self.dataset = pd.read_csv(os.path.join("datasets","data.csv"))
         print(self.dataset)
+        print(self.dataset.shape)
+        print(self.dataset.columns)
+        print(self.dataset.info())
+        print(self.dataset.describe())
 
 if __name__ == "__main__":
     R = Recommender()
