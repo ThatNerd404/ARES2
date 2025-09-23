@@ -9,7 +9,7 @@ class Recommender():
         self.logger = logging.getLogger("logger")
         self.logger.setLevel(logging.DEBUG)
         handler = RotatingFileHandler(
-        os.path.join("ARES2","Logs","log.log"), maxBytes=100000, backupCount=5, encoding="utf-8")
+        os.path.join("Logs","log.log"), maxBytes=100000, backupCount=5, encoding="utf-8")
         formatter = logging.Formatter(
         '%(asctime)s - %(levelname)s - %(message)s',"%Y-%m-%d %H:%M:%S")
         handler.setFormatter(formatter)
