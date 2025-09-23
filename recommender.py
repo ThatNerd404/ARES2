@@ -1,4 +1,4 @@
-import logger
+import logging
 from logging.handlers import RotatingFileHandler
 import pandas as pd
 import os
@@ -16,5 +16,9 @@ class Recommender():
         self.logger.addHandler(handler)
 
         self.logger.debug("Finished Initialization")
-        
+        self.dataset = pd.read_csv(os.path.join("datasets","data.csv"))
+        print(self.dataset)
+
+if __name__ == "__main__":
+    R = Recommender()
 
