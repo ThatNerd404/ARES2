@@ -2,6 +2,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 import pandas as pd
 import os
+
 class Recommender():
     def __init__(self):
 
